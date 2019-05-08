@@ -149,7 +149,7 @@ if (isset($do)) {
                 table.table-nop td{
                     border:1px solid black;
                     padding: 1px 6px;
-                    font-weight: bold; 
+                    font-weight: bold;
                     font-size: 12px;
                 }
 
@@ -533,7 +533,7 @@ if (isset($do)) {
                                     MENGETAHUI :<br/>PPAT / NOTARIS / KEPALA KANTOR LELANG / PEJABAT LELANG/<br/>KEPALA KANTOR PERTANAHAN KABUPATEN BANTUL
                                 </td>
                                 <td class="text-center border-right">
-                                    DITERIMA OLEH :<br/>TEMPAT PEMBAYARAN BPHTB<br/>Tanggal : 
+                                    DITERIMA OLEH :<br/>TEMPAT PEMBAYARAN BPHTB<br/>Tanggal :
                                 </td>
                                 <td class="text-center">
                                     ..................., tgl ...................<br/>WAJIB PAJAK / PENYETOR

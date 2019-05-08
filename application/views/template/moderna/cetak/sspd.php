@@ -1,4 +1,4 @@
-<?php 
+<?php
 function rupiah($bilangan = 0, $behind_number = 2){
 	$bilangan = number_format($bilangan, $behind_number, ',', '.');
 	return $bilangan;
@@ -297,7 +297,7 @@ if (isset($do)) {
 				<td class="border-right" colspan="7">a. Penghitungan Wajib Pajak</td>
 			</tr>
 			<tr>
-				<?php 
+				<?php
 				$als = array('&nbsp;&nbsp;', '&nbsp;&nbsp;', '&nbsp;&nbsp;');
 				$bb = 'STPD/SKPDKB/SKPDKBT';
 				$nono = '';
@@ -326,7 +326,7 @@ if (isset($do)) {
 				<td class="border-left text-center" colspan="2"><div class="box-check" style="float: right;"><b><?php if($sspd['jmlSetoranCheck'] == 'C') echo 'X' ?></b></div></td>
 				<td colspan="3">c. Pengurangan dihitung sendiri karena : </td>
 				<td colspan="4" class="border-right">
-					<?php 
+					<?php
 					$als = array('&nbsp;&nbsp;', '&nbsp;&nbsp;');
 					if($sspd['jmlSetoranCheck'] == 'C'){
 						$alasan = json_decode($sspd['jmlSetoranValue'], true);
@@ -344,7 +344,7 @@ if (isset($do)) {
 			</tr>
 			<tr class="border-bottom">
 				<td class="border-left text-center" colspan="2"><div class="box-check" style="float: right;"><b><?php if($sspd['jmlSetoranCheck'] == 'D') echo 'X' ?></b></div></td>
-				<?php 
+				<?php
 				$als = '';
 				if($sspd['jmlSetoranCheck'] == 'D'){
 					$alasan = json_decode($sspd['jmlSetoranValue'], true);
@@ -380,7 +380,7 @@ if (isset($do)) {
 									MENGETAHUI :<br/>PPAT / NOTARIS / KEPALA KANTOR LELANG / PEJABAT LELANG/<br/>KEPALA KANTOR PERTANAHAN KABUPATEN BANTUL
 								</td>
 								<td class="text-center border-right">
-									DITERIMA OLEH :<br/>TEMPAT PEMBAYARAN BPHTB<br/>Tanggal : 
+									DITERIMA OLEH :<br/>TEMPAT PEMBAYARAN BPHTB<br/>Tanggal :
 								</td>
 								<td class="text-center">
 									..................., tgl ...................<br/>WAJIB PAJAK / PENYETOR
@@ -651,7 +651,7 @@ table.table-nop{
 table.table-nop td{
 	border:1px solid black;
 	padding: 1px 6px;
-	font-weight: bold; 
+	font-weight: bold;
 	font-size: 12px;
 }
 
