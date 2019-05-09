@@ -1,4 +1,4 @@
-<?php 
+<?php
 	function rupiah($bilangan = 0){
 		$bilangan = number_format($bilangan, 2, ',', '.');
 		return $bilangan;
@@ -12,12 +12,12 @@
 <section id="content">
 	<div class="container">
 		<?php if($type == ''){ ?>
-		
-		<?php // }elseif($type == 'bphtb'){ 
+
+		<?php // }elseif($type == 'bphtb'){
 			}else {
 				$this->load->view('layanan/' . $type);
 			} ?>
-		
+
 	</div>
 </section>
 
@@ -33,7 +33,7 @@
 	ul.pagination li{
 		text-align:center;
 	}
-	ul.pagination li a{ 
+	ul.pagination li a{
 		/*width: 33.33%;*/
 	}
 	table.table-sspd, table.input-objek-pajak{
@@ -52,7 +52,7 @@
 		border-collapse: collapse;
 		text-align: left;
 	}
-	
+
 	table.table-objek-pajak th{
 		padding: 5px;
 		border: 1px solid #ccc;
@@ -95,4 +95,3 @@
 		text-transform:uppercase;
 	}
 </style>
-

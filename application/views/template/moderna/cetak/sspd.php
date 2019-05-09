@@ -180,6 +180,7 @@ if (isset($do)) {
 			</tr>
 
 			<tr>
+				<!-- FAKYAH -->
 				<td class="text-center border-all"><span class="text-bold"><?php echo rupiah($sspd['luasBumi'], 0) ?></span><span class="pull-right">m<sup>2</sup></span></td>
 				<td class="text-center border-all" colspan="2"><span class="pull-left">Rp.</span><span class="text-bold"><?php echo rupiah($sspd['njopBumi']) ?></span></td>
 				<td class="border-right text-center border-all" colspan="2"><span class="pull-left">11. Rp.</span><span class="text-bold"><?php echo rupiah($sspd['luasBumi'] * $sspd['njopBumi']) ?></span></td>

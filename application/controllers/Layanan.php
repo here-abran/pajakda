@@ -62,7 +62,7 @@ class Layanan extends Public_Controller {
                     'nopPBB' => $v[1],
                     'hakAtasTanah' => $v[2],
                     'noSertifikat' => $v[3],
-                    'luasBumi' => $v[4],
+                    'luasBumi' => $v[16],
                     'njopBumi' => $v[5],
                     'luasBangunan' => $v[6],
                     'njopBangunan' => $v[7],
@@ -79,6 +79,7 @@ class Layanan extends Public_Controller {
                 $nilaiNpop += $v[8];
             }
 
+            $data['hargaTransaksi'] = str_replace(".", "", $data['hargaTransaksi']);
             $data['sspdNama'] = strtoupper($data['sspdNama']);
             $data['sspdAlamat'] = strtoupper($data['sspdAlamat']);
             $data['sspdBlok'] = strtoupper($data['sspdBlok']);
@@ -87,8 +88,9 @@ class Layanan extends Public_Controller {
             $data['sspdKabupaten'] = $this->beautifyWilayah($data['sspdKabupaten']);
             $data['sspdKecamatan'] = $this->beautifyWilayah($data['sspdKecamatan']);
             $data['sspdKelurahan'] = $this->beautifyWilayah($data['sspdKelurahan']);
-            $data['sspdNpop'] = ($data['hargaTransaksi'] > $nilaiNpop) ? $data['hargaTransaksi'] : $nilaiNpop;
+            $data['sspdNpop'] = $data['hargaTransaksi'] > $nilaiNpop ? $data['hargaTransaksi'] : $nilaiNpop;
             $data['sspdNpoptkp'] = $this->npoptkp;
+            // die(json_encode($data));
 
             $npopkp = $data['sspdNpop'] - $data['sspdNpoptkp'];
             $data['sspdNpopkp'] = ($npopkp > 0) ? $npopkp : 0;
@@ -137,6 +139,7 @@ class Layanan extends Public_Controller {
 
                 redirect(base_url() . 'index.php/layanan/cetak?type=bphtb&nik=' . $data['sspdNik'] . '&noForm=' . $data['sspdFormNo']);
             }
+
             // var_dump($post);
             // var_dump($data);
             // var_dump($data_detail);
@@ -167,6 +170,7 @@ class Layanan extends Public_Controller {
             $this->sspd->join('ref_kecamatan kec_pbb');
             $this->sspd->join('ref_kelurahan kel_pbb');
             $data['sspd'] = $this->sspd->get_by(array('sspdNik' => $get['nik'], 'sspdFormNo' => $get['noForm'], 'is_sspd' => 1));
+            // die(var_dump($data['sspd']));
             if ($data['sspd'] != NULL) {
                 $data['sspd_detail'] = $this->sspd_detail->get_many_by(array('sspdId' => $data['sspd']['sspdId']));
                 $data['hak_atas_tanah'] = $this->list_hak_atas_tanah('array');
