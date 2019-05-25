@@ -170,6 +170,7 @@ class Layanan extends Public_Controller {
             $this->sspd->join('ref_kecamatan kec_pbb');
             $this->sspd->join('ref_kelurahan kel_pbb');
             $data['sspd'] = $this->sspd->get_by(array('sspdNik' => $get['nik'], 'sspdFormNo' => $get['noForm'], 'is_sspd' => 1));
+            $data['sspd']['sspdNpop'] = ($data['sspd']['luasBumi'] * $data['sspd']['njopBumi']) + ($data['sspd']['luasBangunan'] * $data['sspd']['njopBangunan']);
             // die(var_dump($data['sspd']));
             if ($data['sspd'] != NULL) {
                 $data['sspd_detail'] = $this->sspd_detail->get_many_by(array('sspdId' => $data['sspd']['sspdId']));
